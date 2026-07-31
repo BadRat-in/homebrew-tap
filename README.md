@@ -5,20 +5,25 @@ Homebrew tap for [BadRat-in](https://github.com/BadRat-in) tools.
 ## Install
 
 ```bash
-brew install BadRat-in/tap/cleanx
+brew install BadRat-in/tap/fsj      # FS Janitor
+brew install BadRat-in/tap/wifikit  # WiFiKit
 ```
 
-Or tap first, then install:
+Or tap first, then install by name:
 
 ```bash
 brew tap BadRat-in/tap
-brew install cleanx
+brew install fsj
 ```
 
 ## Formulae
 
 | Formula | Description |
 |---|---|
-| [`cleanx`](Formula/cleanx.rb) | Smart macOS cleanup utility for leftover app files and dev caches ([repo](https://github.com/BadRat-in/cleanx)) |
+| [`fsj`](Formula/fsj.rb) | The filesystem maintenance toolkit for macOS — storage cleanup, scheduled expirations, directory watchers and a maintenance score, via a CLI and a full-screen TUI ([repo](https://github.com/BadRat-in/fs-janitor)) |
+| [`wifikit`](Formula/wifikit.rb) | Terminal UI + CLI driving an ESP32 running Marauder for authorized WiFi security testing ([repo](https://github.com/BadRat-in/wifikit)) |
 
-Formulae build from source (`go build`), so no code-signing or notarization is involved — Homebrew compiles the binary locally.
+## Notes
+
+- **`fsj`** installs a prebuilt, cgo-free macOS binary from the GitHub release (darwin arm64/amd64).
+- **`wifikit`** is a Python application installed into an isolated virtualenv; its dependencies (including `cryptography`, pulled in by `esptool`) build from source, so the first install compiles a few packages.
