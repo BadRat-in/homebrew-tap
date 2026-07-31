@@ -35,4 +35,4 @@ brew install --cask macisland
 
 - **`fsj`** installs a prebuilt, cgo-free macOS binary from the GitHub release (darwin arm64/amd64).
 - **`wifikit`** is a Python app installed into an isolated virtualenv; its dependencies (including `cryptography`, via `esptool`) build from source, so the first install compiles a few packages.
-- **`macisland`** is a GUI application (Cask). It is signed but not notarized, so Gatekeeper may prompt on first launch — right-click the app and choose **Open**, or run `xattr -dr com.apple.quarantine "/Applications/MacIsland.app"`.
+- **`macisland`** is a GUI application (Cask), signed and notarized by Apple (Team `86Y9L37F45`), so it launches without a Gatekeeper prompt.
